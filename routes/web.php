@@ -11,8 +11,13 @@
 |
 */
 
+use App\Link;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+    $links = Link::all();
+    return view('welcome', ['links' => $links]);
 });
 
 Auth::routes();
