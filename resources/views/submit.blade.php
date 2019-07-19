@@ -10,7 +10,8 @@
                     </div>
                 @endif
 
-                {!! csrf_field() !!}
+                @csrf
+
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ old('title') }}">
@@ -18,6 +19,7 @@
                         <span class="help-block">{{ $errors->first('title') }}</span>
                     @endif
                 </div>
+
                 <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                     <label for="url">Url</label>
                     <input type="text" class="form-control" id="url" name="url" placeholder="URL" value="{{ old('url') }}">
@@ -25,6 +27,7 @@
                         <span class="help-block">{{ $errors->first('url') }}</span>
                     @endif
                 </div>
+
                 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                     <label for="description">Description</label>
                     <textarea class="form-control" id="description" name="description" placeholder="description">{{ old('description') }}</textarea>
@@ -32,6 +35,7 @@
                         <span class="help-block">{{ $errors->first('description') }}</span>
                     @endif
                 </div>
+                    
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>
